@@ -1,0 +1,22 @@
+{
+    "name": "bigquery-js-udf",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "webpack --config webpack.config.js"
+    },
+    "dependencies": {
+        "lodash": "^4.17.21"
+    },
+    "devDependencies": {
+        "webpack": "^4.41.5",
+        "webpack-cli": "^3.3.10"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/justdataplease/bigquery-js-udf.git"
+    },
+    "bugs": {
+        "url": "https://github.com/justdataplease/bigquery-js-udf/issues"
+    },
+    "homepage": "https://github.com/justdataplease/bigquery-js-udf#readme"
+}
