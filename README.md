@@ -2,6 +2,9 @@
 
 ## How to reproduce
 
+*If you want to just test stemming functionality in bigquery skip steps 1-5, 
+and in step 6 replace "gs://yourbucket/nlp.js" with "gs://justdataplease/bigquery-stemmers/nlp.js".*
+
 ### 1. Clone the repository
 
 ### 2. Install necessary packages defined in package.json.
@@ -14,9 +17,13 @@
     gsutil mb -c nearline -l europe-west3 -p yourproject gs://yourbucket
 
 ### 5. Copy webpack output or nlp.js to GCS.
-    gsutil cp dist/nlp.js gs://yourbucket
+    gsutil cp dist/nlp.js gs://justdataplease/bigquery-stemmers
 
 ### 6. Implement stemmers
+As an example, we will translate the following English sentence into Greek and Spanish. 
+
+"Natural language processing is a subfield of linguistics computer science and artificial intelligence concerned with the interactions between computers and human language"
+
     -- Define corpus
     DECLARE grString,enString,esString STRING;
     SET grString = "Η επεξεργασία φυσικής γλώσσας είναι ένα υποπεδίο της γλωσσολογίας της επιστήμης των υπολογιστών και της τεχνητής νοημοσύνης που ασχολείται με τις αλληλεπιδράσεις μεταξύ των υπολογιστών και της ανθρώπινης γλώσσας";
