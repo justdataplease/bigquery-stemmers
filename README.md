@@ -28,7 +28,7 @@
     RETURNS STRING
     LANGUAGE js
     OPTIONS (
-    library=["gs://bigquery_js_udf/nlp.js"]
+    library=["gs://yourbucket/nlp.js"]
     )
     AS r"""
     return utils.greekStemmer(word);
@@ -39,7 +39,7 @@
     RETURNS STRING
     LANGUAGE js
     OPTIONS (
-    library=["gs://bigquery_js_udf/nlp.js"]
+    library=["gs://yourbucket/nlp.js"]
     )
     AS r"""
     return utils.porterStemmer(word);
@@ -50,7 +50,7 @@
     RETURNS STRING
     LANGUAGE js
     OPTIONS (
-    library=["gs://bigquery_js_udf/nlp.js"]
+    library=["gs://yourbucket/nlp.js"]
     )
     AS r"""
     return utils.unineStemmer(word);
