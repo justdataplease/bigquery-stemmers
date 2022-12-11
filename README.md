@@ -1,11 +1,14 @@
 # Extend BigQuery NLP armory with Stemmers - Implement English,Spanish and Greek Stemmers using JS
 
+Read original article [here](https://medium.com/mlearning-ai/extend-bigquery-nlp-armory-with-stemmers-995fae853b0e).
+
 ## How to reproduce
 
 *If you want to just test stemming functionality in bigquery skip steps 1-5, 
 and in step 6 replace "gs://yourbucket/nlp.js" with "gs://justdataplease/bigquery-stemmers/nlp.js".*
 
 ### 1. Clone the repository
+    git clone https://github.com/justdataplease/bigquery-stemmers.git
 
 ### 2. Install necessary packages defined in package.json.
     npm install
