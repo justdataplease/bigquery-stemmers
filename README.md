@@ -20,7 +20,7 @@ and in step 6 replace "gs://yourbucket/nlp.js" with "gs://justdataplease/bigquer
     gsutil mb -c nearline -l europe-west3 -p yourproject gs://yourbucket
 
 ### 5. Copy webpack output or nlp.js to GCS.
-    gsutil cp dist/nlp.js gs://justdataplease/bigquery-stemmers
+    gsutil cp dist/nlp.js gs://yourbucket
 
 ### 6. Implement stemmers
 As an example, we will translate the following English sentence into Greek and Spanish. 
