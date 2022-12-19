@@ -45,7 +45,7 @@ As an example, we will translate the following English sentence into Greek and S
     """;
     
     -- Create english stemmer
-    CREATE TEMP FUNCTION poStemmer(word STRING)
+    CREATE TEMP FUNCTION porterStemmer(word STRING)
     RETURNS STRING
     LANGUAGE js
     OPTIONS (
@@ -86,7 +86,7 @@ As an example, we will translate the following English sentence into Greek and S
     string_agg(
     CASE lang 
     WHEN 'gr' THEN grStemmer(fix_word(word))
-    WHEN 'en' THEN poStemmer(word)
+    WHEN 'en' THEN porterStemmer(word)
     WHEN 'es' THEN esStemmer(word) 
     ELSE 'missing' END," ") stemmed, 
     string_agg(word," ") original
