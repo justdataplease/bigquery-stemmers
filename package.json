@@ -1,11 +1,12 @@
 {
-    "name": "bigquery-js-udf",
+    "name": "bigquery-stemmers",
     "version": "1.0.0",
     "scripts": {
         "build": "webpack --config webpack.config.js"
     },
     "dependencies": {
-        "lodash": "^4.17.21"
+        "lodash": "^4.17.21",
+        "underscore.js": "^1.0.0"
     },
     "devDependencies": {
         "webpack": "^4.41.5",
@@ -13,10 +14,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/justdataplease/bigquery-js-udf.git"
+        "url": "git+https://github.com/justdataplease/bigquery-stemmers.git"
     },
     "bugs": {
-        "url": "https://github.com/justdataplease/bigquery-js-udf/issues"
+        "url": "https://github.com/justdataplease/bigquery-stemmers/issues"
     },
-    "homepage": "https://github.com/justdataplease/bigquery-js-udf#readme"
+    "homepage": "https://github.com/justdataplease/bigquery-stemmers#readme"
 }
