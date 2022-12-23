@@ -23,9 +23,9 @@ go to — 7. Stemmers Demo.
 
     gsutil mb -c nearline -l europe-west3 -p yourproject gs://yourbucket
 
-### 5. Copy webpack output or nlp.js to GCS.
+### 5. Copy webpack output or stemmers.js to GCS.
 
-    gsutil cp dist/nlp.js gs://yourbucket
+    gsutil cp dist/stemmers.js gs://yourbucket
 
 ### 6. Implement stemmers
 
@@ -45,7 +45,7 @@ the interactions between computers and human language"
     RETURNS STRING
     LANGUAGE js
     OPTIONS (
-    library=["gs://yourbucket/nlp.js"]
+    library=["gs://yourbucket/stemmers.js"]
     )
     AS r"""
     return utils.greekStemmer(word);
@@ -56,7 +56,7 @@ the interactions between computers and human language"
     RETURNS STRING
     LANGUAGE js
     OPTIONS (
-    library=["gs://yourbucket/nlp.js"]
+    library=["gs://yourbucket/stemmers.js"]
     )
     AS r"""
     return utils.porterStemmer(word);
@@ -67,7 +67,7 @@ the interactions between computers and human language"
     RETURNS STRING
     LANGUAGE js
     OPTIONS (
-    library=["gs://yourbucket/nlp.js"]
+    library=["gs://yourbucket/stemmers.js"]
     )
     AS r"""
     return utils.unineStemmer(word);

@@ -4,9 +4,9 @@ module.exports = {
     entry: path.resolve(__dirname, 'src/index.js'),
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'nlp.js',
+        filename: 'stemmers.js',
         library: 'utils'
     },
     mode: 'production',
-    devtool: 'sourceMap',
+    devtool: 'sourceMap'
 };
