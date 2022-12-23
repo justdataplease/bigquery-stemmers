@@ -1,3 +1,5 @@
+// source : https://github.com/Yomguithereal/talisman
+
 /* eslint no-cond-assign: 0 */
 /**
  * Talisman stemmers/porter

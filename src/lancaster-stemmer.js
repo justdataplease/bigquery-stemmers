@@ -1,3 +1,5 @@
+// source : https://github.com/Yomguithereal/talisman
+
 /**
  * Talisman stemmers/lancaster
  * ============================

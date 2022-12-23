@@ -1,3 +1,5 @@
+// source : https://github.com/Yomguithereal/talisman
+
 /* eslint no-multi-spaces: 0 */
 /* eslint no-confusing-arrow: 0 */
 /**

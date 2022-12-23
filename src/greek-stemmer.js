@@ -1,3 +1,5 @@
+// source : https://github.com/Apmats/greekstemmerjs
+
 const stepOneExceptions = {
     "ΦΑΓΙΑ": "ΦΑ",
     "ΦΑΓΙΟΥ": "ΦΑ",
