@@ -4,28 +4,35 @@ Read original article [here](https://medium.com/mlearning-ai/extend-bigquery-nlp
 
 ## How to reproduce
 
-*If you want to just test stemming functionality in bigquery skip steps 1-5, 
-and in step 6 replace "gs://yourbucket/nlp.js" with "gs://justdataplease/bigquery-stemmers/nlp.js".*
+*If you want to just test or use stemming functionality in BigQuery, without implementing it,
+go to — 7. Stemmers Demo.
 
 ### 1. Clone the repository
+
     git clone https://github.com/justdataplease/bigquery-stemmers.git
 
 ### 2. Install necessary packages defined in package.json.
+
     npm install
 
 ### 3. Run webpack.config.js to create our package using webpack.
+
     npm run-script build
 
 ### 4. Create a bucket in GCS. Make sure to change "yourproject" with your GCP project id and "yourbucket" with your desired bucket name (has to be universally unique).
+
     gsutil mb -c nearline -l europe-west3 -p yourproject gs://yourbucket
 
 ### 5. Copy webpack output or nlp.js to GCS.
+
     gsutil cp dist/nlp.js gs://yourbucket
 
 ### 6. Implement stemmers
-As an example, we will translate the following English sentence into Greek and Spanish. 
 
-"Natural language processing is a subfield of linguistics computer science and artificial intelligence concerned with the interactions between computers and human language"
+As an example, we will translate the following English sentence into Greek and Spanish.
+
+"Natural language processing is a subfield of linguistics computer science and artificial intelligence concerned with
+the interactions between computers and human language"
 
     -- Define corpus
     DECLARE grString,enString,esString STRING;
@@ -92,3 +99,40 @@ As an example, we will translate the following English sentence into Greek and S
     string_agg(word," ") original
     FROM corpus
     GROUP BY 1
+
+### 7. Stemmers Demo
+
+    -- Define corpus
+    DECLARE grString,enString,esString STRING;
+    SET grString = "Η επεξεργασία φυσικής γλώσσας είναι ένα υποπεδίο της γλωσσολογίας της επιστήμης των υπολογιστών και της τεχνητής νοημοσύνης που ασχολείται με τις αλληλεπιδράσεις μεταξύ των υπολογιστών και της ανθρώπινης γλώσσας";
+    SET enString = "Natural language processing is a subfield of linguistics computer science and artificial intelligence concerned with the interactions between computers and human language";
+    SET esString = "El procesamiento del lenguaje natural es un subcampo de la lingüística la informática y la inteligencia artificial que se ocupa de las interacciones entre las computadoras y el lenguaje humano";
+    
+    
+    -- Remove accents and convers to upper case - greek stemmer requirement
+    CREATE TEMP FUNCTION fix_word(word STRING) AS ((
+    SELECT UPPER(regexp_replace(normalize(word, NFD), r"\pM", ''))
+    ));
+    
+    -- Union all sentenses
+    WITH corpus AS (
+      SELECT word, 'gr' lang FROM UNNEST(SPLIT(grString," ")) word 
+      UNION ALL
+      SELECT word, 'en' lang FROM UNNEST(SPLIT(enString," ")) word 
+      UNION ALL
+      SELECT word,'es' lang FROM UNNEST(SPLIT(esString," ")) word 
+    )
+    
+    -- Run stemmers
+    SELECT 
+    lang,
+    string_agg(
+    CASE lang 
+    WHEN 'gr' THEN justfunctions.eu.grStemmer(fix_word(word))
+    WHEN 'en' THEN justfunctions.eu.porterStemmer(word)
+    WHEN 'es' THEN justfunctions.eu.esStemmer(word) 
+    ELSE 'missing' END," ") stemmed, 
+    string_agg(word," ") original
+    FROM corpus
+    GROUP BY 1
+
