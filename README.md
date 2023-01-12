@@ -100,6 +100,8 @@ the interactions between computers and human language"
     FROM corpus
     GROUP BY 1
 
+
+
     --Output
     1 gr
     stemmed : Η ΕΠΕΞΕΡΓΑΣ ΦΥΣΙΚ ΓΛΩΣΣ ΕΙΝΑΙ ΕΝ ΥΠΟΠΕΔ ΤΗΣ ΓΛΩΣΣΟΛΟΓ ΤΗΣ ΕΠΙΣΤΗΜ ΤΩΝ ΥΠΟΛΟΓΙΣΤ ΚΑΙ ΤΗΣ ΤΕΧΝΗΤ ΝΟΗΜΟΣΥΝ ΠΟΥ ΑΣΧΟΛΕΙΤΑ ΜΕ ΤΙΣ ΑΛΛΗΛΕΠΙΔΡΑΣ ΜΕΤΑΞΥ ΤΩΝ ΥΠΟΛΟΓΙΣΤ ΚΑΙ ΤΗΣ ΑΝΘΡΩΠΙΝ ΓΛΩΣΣ
@@ -148,6 +150,9 @@ the interactions between computers and human language"
     string_agg(word," ") original
     FROM corpus
     GROUP BY 1
+
+
+
 
     --Output
     1 gr
