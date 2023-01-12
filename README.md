@@ -136,3 +136,17 @@ the interactions between computers and human language"
     FROM corpus
     GROUP BY 1
 
+    --Output
+    1 gr
+    stemmed : Η ΕΠΕΞΕΡΓΑΣ ΦΥΣΙΚ ΓΛΩΣΣ ΕΙΝΑΙ ΕΝ ΥΠΟΠΕΔ ΤΗΣ ΓΛΩΣΣΟΛΟΓ ΤΗΣ ΕΠΙΣΤΗΜ ΤΩΝ ΥΠΟΛΟΓΙΣΤ ΚΑΙ ΤΗΣ ΤΕΧΝΗΤ ΝΟΗΜΟΣΥΝ ΠΟΥ ΑΣΧΟΛΕΙΤΑ ΜΕ ΤΙΣ ΑΛΛΗΛΕΠΙΔΡΑΣ ΜΕΤΑΞΥ ΤΩΝ ΥΠΟΛΟΓΙΣΤ ΚΑΙ ΤΗΣ ΑΝΘΡΩΠΙΝ ΓΛΩΣΣ
+    orginal : Η επεξεργασία φυσικής γλώσσας είναι ένα υποπεδίο της γλωσσολογίας της επιστήμης των υπολογιστών και της τεχνητής νοημοσύνης που ασχολείται με τις αλληλεπιδράσεις μεταξύ των υπολογιστών και της ανθρώπινης γλώσσας
+    
+    2 en
+    stemmed : natur languag process is a subfield of linguist comput scienc and artifici intellig concern with the interact between comput and human languag
+    orginal : Natural language processing is a subfield of linguistics computer science and artificial intelligence concerned with the interactions between computers and human language
+    
+    3 es
+    stemmed : El procesamient del lenguaj natural es un subcamp de la linguistic la informatic y la inteligenci artificial que se ocup de las interaccion entr las computador y el lenguaj human
+    orginal : El procesamiento del lenguaje natural es un subcampo de la lingüística la informática y la inteligencia artificial que se ocupa de las 
+   
+
